@@ -47,7 +47,7 @@ In order to run _"perfectly"_, you must install FFMPEG and an "External JavaScri
 - **Check YT-DLP.exe**: Ensure you have [yt-dlp.exe]([https://github.com/yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp/releases)) in same folder as [YTDLP-GUI.exe](#). 
 - **Update**: In YTDLP-GUI, click Menu, Options, then press Update YT-DLP.
 - **Cookies**: Some sites require a login to access content, ensure your cookies configured correctly. You can follow [yt-dlp's guide on passing cookies](https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp)
-- **ExternalJS**: Some sites use JavaScript challenges to block non-browser access. Ensure you have installed an external JS runtime and configured it correctly. For guidance, see [yt-dlp's EJS setip instructions](https://github.com/yt-dlp/yt-dlp/wiki/EJS). 
+- **ExternalJS**: Some sites use JavaScript challenges to block non-browser access. Ensure you have installed an external JS runtime and configured it correctly. For guidance, see [yt-dlp's EJS setup instructions](https://github.com/yt-dlp/yt-dlp/wiki/EJS). 
 - If issue persists, check [yt-dlp's main repository](https://github.com/yt-dlp/yt-dlp).
 
 ## To Do
