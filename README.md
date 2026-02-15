@@ -55,7 +55,7 @@ In order to run _"perfectly"_, you must install FFMPEG and an "External JavaScri
 - [ ] Complete argument formatting based on tab selected, provided URLs, settings, etc.
 - [ ] Complete audio/Thumbnail's options tab.
 - [ ] Add an option for auto update YT-DLP on startup.
-- [ ] Make log/console display text from launched downloads.
+- [x] Make log/console display text from launched downloads.
 
 ---
 
