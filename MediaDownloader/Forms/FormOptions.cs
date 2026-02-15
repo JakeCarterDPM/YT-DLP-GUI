@@ -78,6 +78,15 @@
             comboBoxJSRuntime.SelectedItem = runtime;
 
         }
+
+        private void FormOptions_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.VideoOutDir = textBoxVideoDir.Text;
+            Properties.Settings.Default.Save();
+        }
+        #endregion
+
+        #region Helper Methods
         private static string EnsureDefaultDir(string settingValue)
         {
             return string.IsNullOrWhiteSpace(settingValue)
@@ -104,11 +113,6 @@
             }
 
             return null;
-        }
-        private void FormOptions_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Properties.Settings.Default.VideoOutDir = textBoxVideoDir.Text;
-            Properties.Settings.Default.Save();
         }
         #endregion
 

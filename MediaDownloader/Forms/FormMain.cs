@@ -5,14 +5,18 @@ namespace MediaDownloader
 
     public partial class FormMain : Form
     {
+        #region Initialization
+        private const int consoleMaxLines = 100;
+
         public FormMain()
         {
             InitializeComponent();
             richTextBoxLog.Clear();
             AppendLog($"Welcome to Media Downloader! Version {Application.ProductVersion}.");
         }
+        #endregion
 
-        #region Menu strip event handlers
+        #region MenuStrip Event Handlers
         private void OptionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using FormOptions optionsForm = new(this);
@@ -23,6 +27,7 @@ namespace MediaDownloader
             MessageBox.Show("Created by Jake Carter", "Credits");
         }
         #endregion
+
         #region Tab Events
         private void TabBtnVideo_Click(object sender, EventArgs e)
         {
@@ -142,7 +147,7 @@ namespace MediaDownloader
             }
 
             //Apply Cookies
-            urlPlusArgs += $" --cookies \"{Settings.Default.CookiesDir}";
+            urlPlusArgs += $" --cookies {Settings.Default.CookiesDir}";
 
             // Apply JS Runtime
             JSRuntime runtime = (JSRuntime)Convert.ToInt32(Settings.Default.JSRuntime);
@@ -172,35 +177,9 @@ namespace MediaDownloader
             YTDPLHandler.SendCMDToYTDLP(urlPlusArgs, AppendLog);
         }
 
-        private const int MaxLines = 100;
-
-        public void AppendLog(string text)
-        {
-            if(richTextBoxLog.InvokeRequired)
-            {
-                richTextBoxLog.Invoke(new Action<string>(AppendLog), text);
-                return;
-            }
-
-            // Append the new line
-            richTextBoxLog.AppendText(text + Environment.NewLine);
-
-            // Enforce max line count
-            if(richTextBoxLog.Lines.Length > MaxLines)
-            {
-                string[] lines = richTextBoxLog.Lines;
-                int removeCount = lines.Length - MaxLines;
-                richTextBoxLog.Lines = lines.Skip(removeCount).ToArray();
-            }
-
-            // Scroll to bottom
-            richTextBoxLog.SelectionStart = richTextBoxLog.Text.Length;
-            richTextBoxLog.SelectionLength = 0;
-            richTextBoxLog.ScrollToCaret();
-        }
-
         #endregion
 
+        #region Misc UI
         private void TextBoxURL_MouseUp(object sender, EventArgs e)
         {
             textBoxURL.SelectAll();
@@ -217,5 +196,32 @@ namespace MediaDownloader
                 textBoxURL.SelectAll();      // Optional: select all text
             }
         }
+
+        public void AppendLog(string text)
+        {
+            if(richTextBoxLog.InvokeRequired)
+            {
+                richTextBoxLog.Invoke(new Action<string>(AppendLog), text);
+                return;
+            }
+
+            // Append the new line
+            richTextBoxLog.AppendText(text + Environment.NewLine);
+
+            // Enforce max line count
+            if(richTextBoxLog.Lines.Length > consoleMaxLines)
+            {
+                string[] lines = richTextBoxLog.Lines;
+                int removeCount = lines.Length - consoleMaxLines;
+                richTextBoxLog.Lines = lines.Skip(removeCount).ToArray();
+            }
+
+            // Scroll to bottom
+            richTextBoxLog.SelectionStart = richTextBoxLog.Text.Length;
+            richTextBoxLog.SelectionLength = 0;
+            richTextBoxLog.ScrollToCaret();
+        }
+
+        #endregion
     }
 }
