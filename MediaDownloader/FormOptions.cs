@@ -1,14 +1,18 @@
 ﻿namespace MediaDownloader
 {
     using System;
+    using System.Diagnostics;
     using System.Windows.Forms;
 
     public partial class FormOptions : Form
     {
+        private readonly FormMain _formMain;
+
         #region Form Open/Close Events
-        public FormOptions()
+        public FormOptions(FormMain formMain)
         {
             InitializeComponent();
+            _formMain = formMain;
         }
         private void FormOptions_Load(object sender, EventArgs e)
         {
@@ -69,7 +73,10 @@
 
             // Dropdown list for JSRuntime
             comboBoxJSRuntime.DataSource = Enum.GetValues(typeof(JSRuntime));
-            comboBoxJSRuntime.SelectedItem = (JSRuntime)Properties.Settings.Default.JSRuntime;
+            int savedValue = Properties.Settings.Default.JSRuntime;
+            JSRuntime runtime = Enum.IsDefined(typeof(JSRuntime), savedValue) ? (JSRuntime)savedValue : JSRuntime.Deno;
+            comboBoxJSRuntime.SelectedItem = runtime;
+
         }
         private static string EnsureDefaultDir(string settingValue)
         {
@@ -192,21 +199,26 @@
                 Properties.Settings.Default.Save();
             }
         }
-        private void ButtonUpdateYTDLP_Click(object sender, EventArgs e)
+        private async void ButtonUpdateYTDLP_Click(object sender, EventArgs e)
         {
             try
             {
-                // Run yt-dlp -U to update
-                System.Diagnostics.Process proc = MediaDownloader.YTDPLHandler.SendCMDToYTDLP("-U");
+                buttonUpdateYTDLP.Enabled = false;
 
-                // Optional: wait for it to finish
-                proc.WaitForExit();
+                Process proc = MediaDownloader.YTDPLHandler
+                    .SendCMDToYTDLP("-U", _formMain.AppendLog);
 
-                MessageBox.Show("YT-DLP update finished.", "Update Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                await Task.Run(() => proc.WaitForExit());
+
+                _formMain.AppendLog("Update finished.");
             }
             catch(Exception ex)
             {
-                MessageBox.Show($"Failed to update YT-DLP:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _formMain.AppendLog("Update failed: " + ex.Message);
+            }
+            finally
+            {
+                buttonUpdateYTDLP.Enabled = true;
             }
         }
         #endregion

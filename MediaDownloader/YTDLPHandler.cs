@@ -11,7 +11,7 @@
         /// </summary>
         /// <param name="arguments">Command-line arguments for yt-dlp</param>
         /// <returns>Process object for further tracking</returns>
-        public static Process SendCMDToYTDLP(string arguments)
+        public static Process SendCMDToYTDLP(string arguments, Action<string> onOutput)
         {
             string ytDlpPath = Properties.Settings.Default.YTDLPDir;
 
@@ -22,32 +22,34 @@
             {
                 FileName = ytDlpPath,
                 Arguments = arguments,
-                UseShellExecute = false,   // allows output redirection
+                UseShellExecute = false,
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
                 CreateNoWindow = true
             };
 
             Process proc = new()
-            { StartInfo = psi };
-
-            proc.OutputDataReceived += (sender, e) =>
             {
-                if(!string.IsNullOrWhiteSpace(e.Data))
-                    Console.WriteLine(e.Data); // replace with form UI if needed
+                StartInfo = psi
             };
 
-            proc.ErrorDataReceived += (sender, e) =>
+            proc.OutputDataReceived += (s, e) =>
             {
                 if(!string.IsNullOrWhiteSpace(e.Data))
-                    Console.Error.WriteLine(e.Data); // replace with form UI if needed
+                    onOutput?.Invoke(e.Data);
+            };
+
+            proc.ErrorDataReceived += (s, e) =>
+            {
+                if(!string.IsNullOrWhiteSpace(e.Data))
+                    onOutput?.Invoke("[ERROR] " + e.Data);
             };
 
             proc.Start();
             proc.BeginOutputReadLine();
             proc.BeginErrorReadLine();
 
-            return proc; // caller can wait or track exit
+            return proc;
         }
     }
 }

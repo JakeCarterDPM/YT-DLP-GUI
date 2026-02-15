@@ -31,7 +31,7 @@
             textBoxURL = new TextBox();
             panel1 = new Panel();
             button3 = new Button();
-            button1 = new Button();
+            buttonPasteURL = new Button();
             label1 = new Label();
             button2 = new Button();
             fileSystemWatcher1 = new FileSystemWatcher();
@@ -51,7 +51,7 @@
             creditsToolStripMenuItem = new ToolStripMenuItem();
             exitToolStripMenuItem = new ToolStripMenuItem();
             panel2 = new Panel();
-            richTextBox1 = new RichTextBox();
+            richTextBoxLog = new RichTextBox();
             label4 = new Label();
             tabDownloadType = new TabControl();
             pageVideo = new TabPage();
@@ -75,6 +75,7 @@
             button4 = new Button();
             label11 = new Label();
             textBox1 = new TextBox();
+            tableLayoutPanel3 = new TableLayoutPanel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
@@ -90,6 +91,7 @@
             groupBox2.SuspendLayout();
             statusStrip1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
             SuspendLayout();
             // 
             // textBoxURL
@@ -99,13 +101,13 @@
             textBoxURL.Name = "textBoxURL";
             textBoxURL.Size = new Size(517, 23);
             textBoxURL.TabIndex = 0;
+            textBoxURL.MouseUp += TextBoxURL_MouseUp;
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Controls.Add(tableLayoutPanel3);
             panel1.Controls.Add(textBoxURL);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button1);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(12, 40);
             panel1.Name = "panel1";
@@ -114,22 +116,25 @@
             // 
             // button3
             // 
-            button3.Location = new Point(109, 29);
+            button3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            button3.Location = new Point(283, 6);
             button3.Name = "button3";
-            button3.Size = new Size(100, 23);
+            button3.Size = new Size(274, 23);
             button3.TabIndex = 3;
             button3.Text = "Download";
             button3.UseVisualStyleBackColor = true;
             button3.Click += StartDownloadButton_Click;
             // 
-            // button1
+            // buttonPasteURL
             // 
-            button1.Location = new Point(3, 29);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 23);
-            button1.TabIndex = 2;
-            button1.Text = "Paste URL";
-            button1.UseVisualStyleBackColor = true;
+            buttonPasteURL.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            buttonPasteURL.Location = new Point(3, 6);
+            buttonPasteURL.Name = "buttonPasteURL";
+            buttonPasteURL.Size = new Size(274, 23);
+            buttonPasteURL.TabIndex = 2;
+            buttonPasteURL.Text = "Paste URL";
+            buttonPasteURL.UseVisualStyleBackColor = true;
+            buttonPasteURL.Click += ButtonPasteURL_Click;
             // 
             // label1
             // 
@@ -316,24 +321,24 @@
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel2.Controls.Add(richTextBox1);
+            panel2.Controls.Add(richTextBoxLog);
             panel2.Controls.Add(label4);
             panel2.Location = new Point(12, 445);
             panel2.Name = "panel2";
             panel2.Size = new Size(560, 204);
             panel2.TabIndex = 6;
             // 
-            // richTextBox1
+            // richTextBoxLog
             // 
-            richTextBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            richTextBox1.AutoWordSelection = true;
-            richTextBox1.BackColor = Color.FromArgb(35, 35, 35);
-            richTextBox1.ForeColor = Color.Lime;
-            richTextBox1.Location = new Point(4, 18);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(552, 173);
-            richTextBox1.TabIndex = 1;
-            richTextBox1.Text = "Console Sample Text. This is what code would look like when being ran. etc. etc. etc. next line should be appearing soon.";
+            richTextBoxLog.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            richTextBoxLog.AutoWordSelection = true;
+            richTextBoxLog.BackColor = Color.FromArgb(35, 35, 35);
+            richTextBoxLog.ForeColor = Color.Lime;
+            richTextBoxLog.Location = new Point(4, 18);
+            richTextBoxLog.Name = "richTextBoxLog";
+            richTextBoxLog.Size = new Size(552, 173);
+            richTextBoxLog.TabIndex = 1;
+            richTextBoxLog.Text = "Console Sample Text. This is what code would look like when being ran. etc. etc. etc. next line should be appearing soon.";
             // 
             // label4
             // 
@@ -518,7 +523,7 @@
             // 
             // tableLayoutPanel2
             // 
-            tableLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel2.ColumnCount = 4;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 116F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60.5927544F));
@@ -574,6 +579,21 @@
             textBox1.Size = new Size(263, 23);
             textBox1.TabIndex = 1;
             // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel3.ColumnCount = 2;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel3.Controls.Add(buttonPasteURL, 0, 0);
+            tableLayoutPanel3.Controls.Add(button3, 1, 0);
+            tableLayoutPanel3.Location = new Point(0, 21);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 1;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel3.Size = new Size(560, 35);
+            tableLayoutPanel3.TabIndex = 2;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -616,6 +636,7 @@
             statusStrip1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
+            tableLayoutPanel3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -626,7 +647,7 @@
         private Panel panel1;
         private Label label1;
         private Button button2;
-        private Button button1;
+        private Button buttonPasteURL;
         private FileSystemWatcher fileSystemWatcher1;
         private TableLayoutPanel tableLayoutPanel1;
         private PictureBox tabBtnVideo;
@@ -649,12 +670,11 @@
         private Label label7;
         private Label label6;
         private Label label5;
-        private RichTextBox richTextBox1;
+        private RichTextBox richTextBoxLog;
         private Button button3;
         private Label label8;
         private StatusStrip statusStrip1;
         private ToolStripProgressBar toolStripProgressBar1;
-        private ToolStripStatusLabel toolStripStatusLabel1;
         private ToolStripStatusLabel toolStripYTDLPStatus;
         private CheckBox checkBox1;
         private GroupBox groupBox1;
@@ -670,5 +690,6 @@
         private Label label11;
         private TextBox textBox1;
         private Button button5;
+        private TableLayoutPanel tableLayoutPanel3;
     }
 }
