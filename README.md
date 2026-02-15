@@ -8,6 +8,15 @@ A simple Windows Form Application that provides a basic user interface for [yt-d
 - Download videos, audio, and thumbnails from most websites supported by yt-dlp.
 - Simple, lightweight interface.
 - No command line knowledge required.
+- Support for PATHs (FFMPEG, YT-DLP).
+- Updater for YT-DLP.
+
+---
+
+## Requirements
+In order to run _"perfectly"_, you must install FFMPEG and an "External JavaScript Runtime".
+- **FFMPEG**: Used for modifying media. You can download a Windows version from [the Official FFMPEG Download Page](https://www.ffmpeg.org/download.html#build-windows).
+- **External JavaScript Runtime**: Required for solving JavaScript challenges on some sites. Instructions for setting up External JS Scripts with yt-dlp are available on [yt-dlp's wiki page for EJS](https://github.com/yt-dlp/yt-dlp/wiki/EJS).
 
 ---
 
@@ -34,11 +43,19 @@ A simple Windows Form Application that provides a basic user interface for [yt-d
 ---
 
 ## Troubleshooting
-- **The item isn't downloading:** Click menu > Update. If that doesn't work, check [yt-dlp](https://github.com/yt-dlp/yt-dlp).
+**"The item isn't downloading"** - Try the following steps:
+- **Check YT-DLP.exe**: Ensure you have [yt-dlp.exe]([https://github.com/yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp/releases)) in same folder as [YTDLP-GUI.exe](#). 
+- **Update**: In YTDLP-GUI, click Menu, Options, then press Update YT-DLP.
+- **Cookies**: Some sites require a login to access content, ensure your cookies configured correctly. You can follow [yt-dlp's guide on passing cookies](https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp)
+- **ExternalJS**: Some sites use JavaScript challenges to block non-browser access. Ensure you have installed an external JS runtime and configured it correctly. For guidance, see [yt-dlp's EJS setip instructions](https://github.com/yt-dlp/yt-dlp/wiki/EJS). 
+- If issue persists, check [yt-dlp's main repository](https://github.com/yt-dlp/yt-dlp).
 
 ## To Do
-- [ ] Actually upload it. lmao.
-- [ ] Various other features to be explored.
+- [ ] Upload a build.
+- [ ] Complete argument formatting based on tab selected, provided URLs, settings, etc.
+- [ ] Complete audio/Thumbnail's options tab.
+- [ ] Add an option for auto update YT-DLP on startup.
+- [ ] Make log/console display text from launched downloads.
 
 ---
 
