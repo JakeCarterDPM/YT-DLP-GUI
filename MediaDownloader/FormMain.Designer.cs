@@ -30,9 +30,10 @@
         {
             textBoxURL = new TextBox();
             panel1 = new Panel();
-            button3 = new Button();
+            tableLayoutPanel3 = new TableLayoutPanel();
             buttonPasteURL = new Button();
             label1 = new Label();
+            button3 = new Button();
             button2 = new Button();
             fileSystemWatcher1 = new FileSystemWatcher();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -75,8 +76,8 @@
             button4 = new Button();
             label11 = new Label();
             textBox1 = new TextBox();
-            tableLayoutPanel3 = new TableLayoutPanel();
             panel1.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tabBtnThumbnail).BeginInit();
@@ -91,15 +92,14 @@
             groupBox2.SuspendLayout();
             statusStrip1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
             SuspendLayout();
             // 
             // textBoxURL
             // 
             textBoxURL.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxURL.Location = new Point(40, 0);
+            textBoxURL.Location = new Point(42, 3);
             textBoxURL.Name = "textBoxURL";
-            textBoxURL.Size = new Size(517, 23);
+            textBoxURL.Size = new Size(438, 23);
             textBoxURL.TabIndex = 0;
             textBoxURL.MouseUp += TextBoxURL_MouseUp;
             // 
@@ -107,30 +107,35 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.Controls.Add(tableLayoutPanel3);
-            panel1.Controls.Add(textBoxURL);
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(button3);
             panel1.Location = new Point(12, 40);
             panel1.Name = "panel1";
-            panel1.Size = new Size(560, 56);
+            panel1.Size = new Size(560, 69);
             panel1.TabIndex = 1;
             // 
-            // button3
+            // tableLayoutPanel3
             // 
-            button3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            button3.Location = new Point(283, 6);
-            button3.Name = "button3";
-            button3.Size = new Size(274, 23);
-            button3.TabIndex = 3;
-            button3.Text = "Download";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += StartDownloadButton_Click;
+            tableLayoutPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel3.ColumnCount = 3;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 39F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 99.99999F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 77F));
+            tableLayoutPanel3.Controls.Add(buttonPasteURL, 2, 0);
+            tableLayoutPanel3.Controls.Add(label1, 0, 0);
+            tableLayoutPanel3.Controls.Add(textBoxURL, 1, 0);
+            tableLayoutPanel3.Location = new Point(0, 0);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 1;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel3.Size = new Size(560, 29);
+            tableLayoutPanel3.TabIndex = 2;
             // 
             // buttonPasteURL
             // 
             buttonPasteURL.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            buttonPasteURL.Location = new Point(3, 6);
+            buttonPasteURL.Location = new Point(486, 3);
             buttonPasteURL.Name = "buttonPasteURL";
-            buttonPasteURL.Size = new Size(274, 23);
+            buttonPasteURL.Size = new Size(71, 23);
             buttonPasteURL.TabIndex = 2;
             buttonPasteURL.Text = "Paste URL";
             buttonPasteURL.UseVisualStyleBackColor = true;
@@ -138,19 +143,31 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Location = new Point(3, 3);
+            label1.Location = new Point(5, 7);
             label1.Name = "label1";
             label1.Size = new Size(31, 15);
             label1.TabIndex = 1;
             label1.Text = "URL:";
             // 
+            // button3
+            // 
+            button3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            button3.Location = new Point(0, 32);
+            button3.Name = "button3";
+            button3.Size = new Size(560, 30);
+            button3.TabIndex = 3;
+            button3.Text = "Quick Paste and Download";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += PasteAndDownloadButton_Click;
+            // 
             // button2
             // 
             button2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            button2.Location = new Point(12, 398);
+            button2.Location = new Point(12, 410);
             button2.Name = "button2";
-            button2.Size = new Size(560, 41);
+            button2.Size = new Size(560, 40);
             button2.TabIndex = 3;
             button2.Text = "Download";
             button2.UseVisualStyleBackColor = true;
@@ -174,7 +191,7 @@
             tableLayoutPanel1.Controls.Add(tabBtnAudio, 1, 0);
             tableLayoutPanel1.Controls.Add(tabBtnVideo, 0, 0);
             tableLayoutPanel1.Controls.Add(label5, 0, 1);
-            tableLayoutPanel1.Location = new Point(12, 118);
+            tableLayoutPanel1.Location = new Point(12, 131);
             tableLayoutPanel1.Margin = new Padding(0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
@@ -253,7 +270,7 @@
             // 
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label2.Location = new Point(12, 99);
+            label2.Location = new Point(12, 112);
             label2.Name = "label2";
             label2.Size = new Size(560, 16);
             label2.TabIndex = 3;
@@ -264,7 +281,7 @@
             // 
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label3.Location = new Point(0, 220);
+            label3.Location = new Point(0, 235);
             label3.Name = "label3";
             label3.Size = new Size(584, 20);
             label3.TabIndex = 4;
@@ -323,9 +340,9 @@
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.Controls.Add(richTextBoxLog);
             panel2.Controls.Add(label4);
-            panel2.Location = new Point(12, 445);
+            panel2.Location = new Point(12, 454);
             panel2.Name = "panel2";
-            panel2.Size = new Size(560, 204);
+            panel2.Size = new Size(560, 145);
             panel2.TabIndex = 6;
             // 
             // richTextBoxLog
@@ -336,7 +353,7 @@
             richTextBoxLog.ForeColor = Color.Lime;
             richTextBoxLog.Location = new Point(4, 18);
             richTextBoxLog.Name = "richTextBoxLog";
-            richTextBoxLog.Size = new Size(552, 173);
+            richTextBoxLog.Size = new Size(552, 114);
             richTextBoxLog.TabIndex = 1;
             richTextBoxLog.Text = "Console Sample Text. This is what code would look like when being ran. etc. etc. etc. next line should be appearing soon.";
             // 
@@ -355,7 +372,7 @@
             tabDownloadType.Controls.Add(pageVideo);
             tabDownloadType.Controls.Add(pageAudio);
             tabDownloadType.Controls.Add(pageThumbnail);
-            tabDownloadType.Location = new Point(0, 223);
+            tabDownloadType.Location = new Point(0, 235);
             tabDownloadType.Name = "tabDownloadType";
             tabDownloadType.SelectedIndex = 0;
             tabDownloadType.Size = new Size(584, 132);
@@ -503,7 +520,7 @@
             // 
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripProgressBar1, toolStripYTDLPStatus });
             statusStrip1.LayoutStyle = ToolStripLayoutStyle.Flow;
-            statusStrip1.Location = new Point(0, 640);
+            statusStrip1.Location = new Point(0, 590);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(584, 21);
             statusStrip1.TabIndex = 9;
@@ -533,7 +550,7 @@
             tableLayoutPanel2.Controls.Add(button4, 2, 0);
             tableLayoutPanel2.Controls.Add(label11, 0, 0);
             tableLayoutPanel2.Controls.Add(textBox1, 1, 0);
-            tableLayoutPanel2.Location = new Point(12, 361);
+            tableLayoutPanel2.Location = new Point(12, 373);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -579,26 +596,11 @@
             textBox1.Size = new Size(263, 23);
             textBox1.TabIndex = 1;
             // 
-            // tableLayoutPanel3
-            // 
-            tableLayoutPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            tableLayoutPanel3.ColumnCount = 2;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel3.Controls.Add(buttonPasteURL, 0, 0);
-            tableLayoutPanel3.Controls.Add(button3, 1, 0);
-            tableLayoutPanel3.Location = new Point(0, 21);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 1;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel3.Size = new Size(560, 35);
-            tableLayoutPanel3.TabIndex = 2;
-            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(584, 661);
+            ClientSize = new Size(584, 611);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(panel1);
             Controls.Add(statusStrip1);
@@ -611,10 +613,13 @@
             Controls.Add(menuStrip1);
             Controls.Add(tabDownloadType);
             MainMenuStrip = menuStrip1;
+            MinimumSize = new Size(450, 585);
             Name = "FormMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "YT-DLP GUI";
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            tableLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
@@ -636,7 +641,6 @@
             statusStrip1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
-            tableLayoutPanel3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }

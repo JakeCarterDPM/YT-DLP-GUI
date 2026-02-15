@@ -72,7 +72,7 @@
             groupBox1.Controls.Add(tableLayoutPanel1);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(839, 144);
+            groupBox1.Size = new Size(390, 144);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Default Directories";
@@ -103,15 +103,15 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.Size = new Size(830, 122);
+            tableLayoutPanel1.Size = new Size(381, 122);
             tableLayoutPanel1.TabIndex = 3;
             // 
             // buttonSetVideoDir
             // 
             buttonSetVideoDir.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            buttonSetVideoDir.Location = new Point(671, 3);
+            buttonSetVideoDir.Location = new Point(326, 3);
             buttonSetVideoDir.Name = "buttonSetVideoDir";
-            buttonSetVideoDir.Size = new Size(156, 23);
+            buttonSetVideoDir.Size = new Size(52, 23);
             buttonSetVideoDir.TabIndex = 2;
             buttonSetVideoDir.Text = "Assign";
             buttonSetVideoDir.UseVisualStyleBackColor = true;
@@ -120,9 +120,9 @@
             // buttonSetAudioDir
             // 
             buttonSetAudioDir.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            buttonSetAudioDir.Location = new Point(671, 33);
+            buttonSetAudioDir.Location = new Point(326, 33);
             buttonSetAudioDir.Name = "buttonSetAudioDir";
-            buttonSetAudioDir.Size = new Size(156, 23);
+            buttonSetAudioDir.Size = new Size(52, 23);
             buttonSetAudioDir.TabIndex = 2;
             buttonSetAudioDir.Text = "Assign";
             buttonSetAudioDir.UseVisualStyleBackColor = true;
@@ -130,9 +130,9 @@
             // buttonSetThumbnailDir
             // 
             buttonSetThumbnailDir.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            buttonSetThumbnailDir.Location = new Point(671, 63);
+            buttonSetThumbnailDir.Location = new Point(326, 63);
             buttonSetThumbnailDir.Name = "buttonSetThumbnailDir";
-            buttonSetThumbnailDir.Size = new Size(156, 23);
+            buttonSetThumbnailDir.Size = new Size(52, 23);
             buttonSetThumbnailDir.TabIndex = 2;
             buttonSetThumbnailDir.Text = "Assign";
             buttonSetThumbnailDir.UseVisualStyleBackColor = true;
@@ -172,7 +172,7 @@
             textBoxThumbnailDir.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             textBoxThumbnailDir.Location = new Point(135, 63);
             textBoxThumbnailDir.Name = "textBoxThumbnailDir";
-            textBoxThumbnailDir.Size = new Size(530, 23);
+            textBoxThumbnailDir.Size = new Size(185, 23);
             textBoxThumbnailDir.TabIndex = 1;
             // 
             // textBoxVideoDir
@@ -180,7 +180,7 @@
             textBoxVideoDir.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             textBoxVideoDir.Location = new Point(135, 3);
             textBoxVideoDir.Name = "textBoxVideoDir";
-            textBoxVideoDir.Size = new Size(530, 23);
+            textBoxVideoDir.Size = new Size(185, 23);
             textBoxVideoDir.TabIndex = 1;
             textBoxVideoDir.TextChanged += TextBoxVideoDir_TextChanged;
             // 
@@ -189,7 +189,7 @@
             textBoxAudioDir.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             textBoxAudioDir.Location = new Point(135, 33);
             textBoxAudioDir.Name = "textBoxAudioDir";
-            textBoxAudioDir.Size = new Size(530, 23);
+            textBoxAudioDir.Size = new Size(185, 23);
             textBoxAudioDir.TabIndex = 1;
             // 
             // label4
@@ -207,15 +207,15 @@
             textBoxCookieDir.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             textBoxCookieDir.Location = new Point(135, 94);
             textBoxCookieDir.Name = "textBoxCookieDir";
-            textBoxCookieDir.Size = new Size(530, 23);
+            textBoxCookieDir.Size = new Size(185, 23);
             textBoxCookieDir.TabIndex = 1;
             // 
             // buttonSetCookieDir
             // 
             buttonSetCookieDir.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            buttonSetCookieDir.Location = new Point(671, 94);
+            buttonSetCookieDir.Location = new Point(326, 94);
             buttonSetCookieDir.Name = "buttonSetCookieDir";
-            buttonSetCookieDir.Size = new Size(156, 23);
+            buttonSetCookieDir.Size = new Size(52, 23);
             buttonSetCookieDir.TabIndex = 2;
             buttonSetCookieDir.Text = "Assign";
             buttonSetCookieDir.UseVisualStyleBackColor = true;
@@ -227,7 +227,7 @@
             groupBox2.Controls.Add(buttonUpdateYTDLP);
             groupBox2.Location = new Point(12, 162);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(839, 93);
+            groupBox2.Size = new Size(390, 93);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "YT-DLP";
@@ -246,15 +246,15 @@
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(830, 35);
+            tableLayoutPanel2.Size = new Size(381, 35);
             tableLayoutPanel2.TabIndex = 4;
             // 
             // buttonYTDLPDir
             // 
             buttonYTDLPDir.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            buttonYTDLPDir.Location = new Point(671, 6);
+            buttonYTDLPDir.Location = new Point(326, 6);
             buttonYTDLPDir.Name = "buttonYTDLPDir";
-            buttonYTDLPDir.Size = new Size(156, 23);
+            buttonYTDLPDir.Size = new Size(52, 23);
             buttonYTDLPDir.TabIndex = 2;
             buttonYTDLPDir.Text = "Assign";
             buttonYTDLPDir.UseVisualStyleBackColor = true;
@@ -275,7 +275,7 @@
             textBoxYTDLPDir.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             textBoxYTDLPDir.Location = new Point(135, 6);
             textBoxYTDLPDir.Name = "textBoxYTDLPDir";
-            textBoxYTDLPDir.Size = new Size(530, 23);
+            textBoxYTDLPDir.Size = new Size(185, 23);
             textBoxYTDLPDir.TabIndex = 1;
             // 
             // buttonUpdateYTDLP
@@ -283,7 +283,7 @@
             buttonUpdateYTDLP.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             buttonUpdateYTDLP.Location = new Point(6, 63);
             buttonUpdateYTDLP.Name = "buttonUpdateYTDLP";
-            buttonUpdateYTDLP.Size = new Size(827, 23);
+            buttonUpdateYTDLP.Size = new Size(378, 23);
             buttonUpdateYTDLP.TabIndex = 0;
             buttonUpdateYTDLP.Text = "Update YT-DLP";
             buttonUpdateYTDLP.UseVisualStyleBackColor = true;
@@ -296,30 +296,31 @@
             groupBox3.Controls.Add(tableLayoutPanel3);
             groupBox3.Location = new Point(12, 261);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(839, 92);
+            groupBox3.Size = new Size(390, 92);
             groupBox3.TabIndex = 5;
             groupBox3.TabStop = false;
             groupBox3.Text = "External Tools";
             // 
             // tableLayoutPanel4
             // 
+            tableLayoutPanel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel4.ColumnCount = 2;
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15.9613056F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 84.0387F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 131F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 99.99999F));
             tableLayoutPanel4.Controls.Add(label6, 0, 0);
             tableLayoutPanel4.Controls.Add(comboBoxJSRuntime, 1, 0);
             tableLayoutPanel4.Location = new Point(6, 57);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 1;
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel4.Size = new Size(827, 27);
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel4.Size = new Size(378, 27);
             tableLayoutPanel4.TabIndex = 5;
             // 
             // label6
             // 
             label6.Anchor = AnchorStyles.Right;
             label6.AutoSize = true;
-            label6.Location = new Point(19, 6);
+            label6.Location = new Point(18, 6);
             label6.Name = "label6";
             label6.Size = new Size(110, 15);
             label6.TabIndex = 1;
@@ -328,11 +329,12 @@
             // 
             // comboBoxJSRuntime
             // 
-            comboBoxJSRuntime.Anchor = AnchorStyles.Left;
+            comboBoxJSRuntime.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             comboBoxJSRuntime.FormattingEnabled = true;
-            comboBoxJSRuntime.Location = new Point(135, 3);
+            comboBoxJSRuntime.Location = new Point(134, 3);
+            comboBoxJSRuntime.Margin = new Padding(3, 3, 50, 3);
             comboBoxJSRuntime.Name = "comboBoxJSRuntime";
-            comboBoxJSRuntime.Size = new Size(528, 23);
+            comboBoxJSRuntime.Size = new Size(194, 23);
             comboBoxJSRuntime.TabIndex = 2;
             comboBoxJSRuntime.SelectedIndexChanged += ComboBoxJSRuntime_SelectedIndexChanged;
             // 
@@ -350,15 +352,15 @@
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(827, 35);
+            tableLayoutPanel3.Size = new Size(378, 35);
             tableLayoutPanel3.TabIndex = 4;
             // 
             // buttonFFMPEGDir
             // 
             buttonFFMPEGDir.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            buttonFFMPEGDir.Location = new Point(669, 6);
+            buttonFFMPEGDir.Location = new Point(324, 6);
             buttonFFMPEGDir.Name = "buttonFFMPEGDir";
-            buttonFFMPEGDir.Size = new Size(155, 23);
+            buttonFFMPEGDir.Size = new Size(51, 23);
             buttonFFMPEGDir.TabIndex = 2;
             buttonFFMPEGDir.Text = "Assign";
             buttonFFMPEGDir.UseVisualStyleBackColor = true;
@@ -379,15 +381,15 @@
             textBoxFFMPEGDir.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             textBoxFFMPEGDir.Location = new Point(135, 6);
             textBoxFFMPEGDir.Name = "textBoxFFMPEGDir";
-            textBoxFFMPEGDir.Size = new Size(528, 23);
+            textBoxFFMPEGDir.Size = new Size(183, 23);
             textBoxFFMPEGDir.TabIndex = 1;
             // 
             // buttonReset
             // 
-            buttonReset.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            buttonReset.Location = new Point(12, 562);
+            buttonReset.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            buttonReset.Location = new Point(12, 356);
             buttonReset.Name = "buttonReset";
-            buttonReset.Size = new Size(839, 23);
+            buttonReset.Size = new Size(390, 23);
             buttonReset.TabIndex = 6;
             buttonReset.Text = "Reset Settings";
             buttonReset.UseVisualStyleBackColor = true;
@@ -397,12 +399,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(863, 597);
+            ClientSize = new Size(414, 391);
             Controls.Add(buttonReset);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
+            MinimumSize = new Size(430, 430);
             Name = "FormOptions";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "YT-DLP GUI Options";
             Load += FormOptions_Load;
             groupBox1.ResumeLayout(false);

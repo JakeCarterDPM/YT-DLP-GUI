@@ -39,6 +39,20 @@ namespace MediaDownloader
         #endregion
 
         #region Download Logic
+        private void PasteAndDownloadButton_Click(object sender, EventArgs e)
+        {
+            // Check if there is text in the clipboard
+            if(Clipboard.ContainsText())
+            {
+                textBoxURL.Text = Clipboard.GetText();
+                StartDownloadButton_Click(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("Clipboard does not contain any text.");
+            }
+        }
+
         private void StartDownloadButton_Click(object sender, EventArgs e)
         {
             //Ensure URL is not empty.
@@ -86,7 +100,7 @@ namespace MediaDownloader
                 //Fix naming convention for facebook and instagram URLS.
                 if(url.Contains("facebook.com") || url.Contains("instagram.com"))
                 {
-                    urlPlusArgs += $" -o \"{Settings.Default.VideoOutDir}\\%(uploader)s_%(upload_date)s_%(title)s.%(ext)s\"";
+                    urlPlusArgs += $" -o \"{Settings.Default.VideoOutDir}\\%(uploader)s_%(upload_date)s_%(id)s.%(ext)s\"";
                 }
                 else
                 {
@@ -153,6 +167,7 @@ namespace MediaDownloader
                     break;
             }
 
+            AppendLog($"-------------------------------------------------------------------------");
             AppendLog($"Sending CMD: {urlPlusArgs}");
             YTDPLHandler.SendCMDToYTDLP(urlPlusArgs, AppendLog);
         }
